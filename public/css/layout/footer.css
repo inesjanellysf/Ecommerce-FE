@@ -1,0 +1,12 @@
+hr {
+    margin: 1rem 0;
+    color: #dfe2e1;
+    border: 0;
+    border-top: 1px solid #dfe2e1;
+    opacity: 1;
+}
+
+.text-muted {
+    --fc-text-opacity: 1;
+    color: rgba(92,108,117,.75) !important;
+}

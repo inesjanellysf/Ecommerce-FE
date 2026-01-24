@@ -1,0 +1,77 @@
+@import '../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+.navbar-nav .dropdown-menu {
+    position: static !important;
+}
+
+.dropdown-menu.show {
+    display: block !important;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: 0;
+    margin-top: 0.125rem;
+}
+
+.dropdown-menu {
+    line-height: 1.375rem;
+    box-shadow: 0 0 2px rgba(145,158,171,.2),0 12px 24px -4px rgba(145,158,171,.12);
+    z-index: 1021;
+
+}
+.fontMenu a, .fontMenu{
+    color: #5C6C75
+}
+
+.dropdown-menu-none {
+    inset: 0 !important;
+    margin: 0 !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+}
+/*.dropdown-toggle:after {
+    margin-left: .255em !important;
+    vertical-align: .255em !important;
+    font-family: 'Font Awesome 6 Free' !important;
+    content: '\f077' !important;
+    border: 0 !important;
+    float: right !important;
+}*/
+
+
+
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute !important;
+    }
+
+    .offcanvas-lg {
+        --fc-offcanvas-height: auto;
+        --fc-offcanvas-border-width: 0;
+        background-color: transparent!important;
+    }
+    .w-lg-auto {
+        width: auto !important;
+    }
+
+    .navbar .dropdown-menu {
+        top: 40px;
+        line-height: 1.2rem;
+        color: #5c6c75;
+        min-width: 12rem;
+        box-shadow: 0 0 2px rgba(145,158,171,.2),0 12px 24px -4px rgba(145,158,171,.12);
+        border-radius: .5rem;
+    }
+    .dropdown-menu-none {
+        position: absolute !important;
+        inset: 0px auto auto 0px !important;
+        margin: 0px !important;
+        transform: translate3d(0px, 42px, 0px) !important;
+    }
+
+    .fontMenu a, .fontMenu{
+        color: #21313C
+    }
+}
+

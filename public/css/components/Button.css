@@ -1,0 +1,43 @@
+/* ===== BASE ===== */
+.btn-login {
+    background-color: rgb(10, 173, 10) !important;
+    color: #fff !important;
+    text-transform: none !important;
+    font-weight: bold;
+    border-radius: 16px;
+
+    display: inline-flex;
+    /* 🔑 NO ocupa todo el ancho */
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== TAMAÑOS ===== */
+.btn-sm {
+    padding: 8px 18px;
+    min-height: 36px;
+    font-size: 13px;
+}
+
+.btn-md {
+    padding: 10px 24px;
+    min-height: 44px;
+    font-size: 14px;
+}
+
+.btn-lg {
+    padding: 12px 32px;
+    min-height: 50px;
+    font-size: 15px;
+}
+
+/* ===== HOVER ===== */
+.btn-login:hover {
+    background-color: rgb(8, 150, 8) !important;
+}
+
+/* ===== DISABLED ===== */
+.btn-login.Mui-disabled {
+    background-color: rgba(10, 173, 10, 0.4) !important;
+    color: #fff !important;
+}

@@ -1,0 +1,37 @@
+.pe-lg-10 {
+    padding-right: 3rem !important;
+}
+
+.pt-10 {
+    padding-top: 3rem!important;
+}
+
+.nav-pills-dark .nav-item .nav-link {
+    color: #21313c;
+    background-color: transparent;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
+
+.nav-pills-dark .nav-item .nav-link.active {
+    color: #fff;
+    background-color: #001e2b;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem!important;
+}
+
+
+
+@media (min-width: 992px) {
+    .pe-lg-10 {
+        padding-right: 3rem!important;
+    }
+
+    .p-lg-10 {
+        padding: 3rem!important;
+    }
+}

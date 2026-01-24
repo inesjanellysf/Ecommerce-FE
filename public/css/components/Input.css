@@ -1,0 +1,66 @@
+/* ===== CONTENEDOR BASE ===== */
+.search-group {
+  display: flex;
+  align-items: center;
+  width: 100%;    
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+/* ===== INPUT ===== */
+.search-group__input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+
+  padding: 10px 14px;
+  font-size: 14px;
+
+  /* por defecto: input normal */
+  border-radius: 0.5rem;
+}
+
+/* ===== CUANDO HAY ICONO ===== */
+.search-group.has-icon .search-group__input {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.search-group__divider {
+  width: 1px;
+  align-self: stretch;   /* 🔑 ocupa toda la altura */
+  background-color: #ced4da;
+}
+
+/* Botón icono */
+.search-group__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 0;
+
+  padding: 0 14px;
+  height: 100%;
+
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.search-group__icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== FOCUS VERDE (AMBOS CASOS) ===== */
+.search-group:focus-within {
+  border-color: rgb(10, 173, 10);
+  box-shadow: 0 0 0 0.25rem rgba(10, 173, 10, 0.25);
+}
+
+/* Evitar focus azul */
+.search-group__input:focus {
+  outline: none;
+  box-shadow: none;
+}

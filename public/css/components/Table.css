@@ -1,0 +1,60 @@
+.table>thead {
+    vertical-align: bottom;
+}
+
+.bg-light {
+    --fc-bg-opacity: 1;
+    background-color: #f0f3f2!important;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+
+th {
+    font-weight: 600;
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+
+
+.table>:not(caption)>*>* {
+    padding: 0.75rem 1.5rem;
+    color: #5c6c75; /* Usa directamente el color */
+    background-color: transparent; /* Transparente directamente */
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px transparent; /* Transparente directamente */
+}
+
+.table-centered td, .table-centered th {
+    vertical-align: middle!important;
+}
+
+.icon-shape {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.icon-xl {
+    width: 8rem;
+    height: 10rem;
+    line-height: 3.5rem;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 3.5rem;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.action-button{
+    text-align: center;
+}
