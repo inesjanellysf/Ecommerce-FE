@@ -12,7 +12,7 @@ export function RouteLanding() {
         <Routes>
 
             <Route path="/" element={<App />} >
-                {/*<Route index element={<Navigate to="libros" replace />} />
+                <Route index element={<Navigate to="libros" replace />} />
                 <Route path="libros" element={<Libros />} />
                 <Route path="carrito-compras">
                     <Route path="pago" element={<ShopCheckout />} />
@@ -22,7 +22,7 @@ export function RouteLanding() {
                     <Route path="login" element={<Login />} />
                     <Route path="register" element={<Register />} />
                     <Route path="reset-password" element={<ResetPassword />} />
-                </Route>*/}
+                </Route>
             </Route>
         </Routes>
     );

@@ -1,0 +1,75 @@
+/* ===== APPBAR ===== */
+.appbar-root {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #DFE2E1;
+  box-shadow: none !important;
+}
+
+.appbar-toolbar {
+  min-height: 72px !important;
+}
+
+.appbar-grid {
+  display: grid;
+  align-items: center;
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 899px) {
+  .appbar-grid {
+    grid-template-columns: 48px 1fr auto;
+    gap: 8px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .appbar-grid {
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+  }
+}
+
+.appbar-left {
+  display: flex;
+  justify-content: center;
+}
+
+.appbar-center {
+  display: flex;
+  width: 100%;
+}
+
+.appbar-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ===== SUBHEADER / CATEGORIES ===== */
+.subheader {
+  background: #ffffff;
+  color: #21313c;
+}
+
+.subheader-container {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 24px;
+}
+
+/* Botón principal de categorías */
+.categories-main {
+  background-color: #0aad0a;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* Dropdown links */
+.category-link {
+  color: #21313c;
+  font-weight: 500;
+  text-transform: none;
+}

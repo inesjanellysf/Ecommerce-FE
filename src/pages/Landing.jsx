@@ -1,51 +1,64 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import { NavBar } from "../layout/NavBar.jsx";
 import { Carousel } from "../components/Carousel.jsx";
 import { Footer } from "../layout/Footer.jsx";
-import { Outlet, useLocation } from "react-router";
-import { Input } from '../components/Input.jsx';
-import  Box from '@mui/material/Box'
+import { Outlet, useLocation } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import { useDevice } from "../hooks/useDevice";
+import AppBarComponent from "../layout/navBar/AppBar.jsx";
+import { IMAGE } from "../constants/urlImage.js";
+import { Image } from "../components/Image.jsx";
+import SlideSection from "../layout/slide/SlideSection.jsx";
 
 export function Landing() {
   const [imgCarousel, setImgCarousel] = useState([]);
-
+  const { isMobile } = useDevice();
   const location = useLocation();
-  const hideCarosuelRoutes = ["/","/landing", "/landing/libros"];
-  
+  const hideCarosuelRoutes = ["/", "/landing", "/libros"];
+
   const showCarosuel = hideCarosuelRoutes.includes(location.pathname);
 
-
   useEffect(() => {
-    fetch('/Data/CarouselData.json')
-      .then(response => {
+    fetch("/Data/CarouselData.json")
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         setImgCarousel(data);
       })
-      .catch(error => {
-        console.error('Error al cargar el JSON:', error);
+      .catch((error) => {
+        console.error("Error al cargar el JSON:", error);
       });
   }, []);
 
   return (
     <Box>
-      <NavBar />
       {console.log(location.pathname)}
-      <div className="mt-8 mb-3">
-        <div className="container">
+      <AppBarComponent />
+      <Box component="main" sx={{ pt: 3, pb:3 }}>
+        {!isMobile && <Toolbar />}
+        <Container
+          maxWidth="xl"
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {showCarosuel && (
-            <Carousel images={imgCarousel} />
+            <SlideSection />
           )}
+          {/*showCarosuel && <Image img={IMAGE.SLIDE_MUJER_COMPRANDO} style={{ borderRadius: 8}} />*/}
+          <Outlet />
+        </Container>
 
-        <Outlet />
-      </div>
-    </div >
-      <Footer />
+        {/*showCarosuel && <Carousel images={imgCarousel} />*/}
+      </Box>
+      {/*<Footer />*/}
     </Box>
-  )
+  );
 }
