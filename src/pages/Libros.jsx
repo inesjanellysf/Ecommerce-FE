@@ -39,22 +39,6 @@ export function Libros() {
 
     return (
         <>
-            <div className="container text-center mt-5 mb-5">
-                <div className="row justify-content-md-center">
-                    <div className="col-12 col-lg-9">
-                        <form className="w-100">
-                            <Input
-                                value={searchQuery}
-                                handleChange={handleSearchChange}
-                                src='/img/icon/search.svg'
-                                placeholder="Buscar productos"
-                                type="search"
-                                alt="Relatos de Papel"
-                            />
-                        </form>
-                    </div>
-                </div>
-            </div>
             <div className="g-4 row row-cols-lg-5 row-cols-md-3 row-cols-2">
                 {filteredBooks.length > 0 ? (
                     filteredBooks.map((book) => (

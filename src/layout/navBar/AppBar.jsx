@@ -15,6 +15,7 @@ import { Image } from "../../components/Image.jsx";
 import { IMAGE } from "../../constants/urlImage.js";
 import { useDevice } from "../../hooks/useDevice";
 import { TopIconsContainer } from "./components/TopIconsContainer.jsx";
+import { useSearch } from '../../hooks/useSearch.jsx';
 
 /* ===== CONFIG ===== */
 const categoriasMenu = [
@@ -55,7 +56,9 @@ function AppBarComponent() {
   const { isMobile } = useDevice();
   const [open, setOpen] = React.useState(false);
   const [navbarData, setNavbarData] = React.useState(null);
+  const { searchQuery, setSearchQuery } = useSearch();
 
+  const handleSearchChange = (e) => setSearchQuery(e.target.value);
   const handleDrawerToggle = () => {
     setOpen((prev) => !prev);
   };
@@ -100,6 +103,8 @@ function AppBarComponent() {
                   <Image img={IMAGE.LOGO_PRINCIPAL} height={36} />
                 ) : (
                   <Input
+                    value={searchQuery}
+                    handleChange={handleSearchChange}
                     src={IMAGE.SEARCH}
                     placeholder="Buscar productos"
                     type="search"

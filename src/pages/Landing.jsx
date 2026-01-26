@@ -11,6 +11,7 @@ import AppBarComponent from "../layout/navBar/AppBar.jsx";
 import { IMAGE } from "../constants/urlImage.js";
 import { Image } from "../components/Image.jsx";
 import SlideSection from "../layout/slide/SlideSection.jsx";
+import Destacados from "../layout/destacados/Destacados.jsx";
 
 export function Landing() {
   const [imgCarousel, setImgCarousel] = useState([]);
@@ -40,7 +41,7 @@ export function Landing() {
     <Box>
       {console.log(location.pathname)}
       <AppBarComponent />
-      <Box component="main" sx={{ pt: 3, pb:3 }}>
+      <Box component="main" sx={{ pt: 3, pb: 3 }}>
         {!isMobile && <Toolbar />}
         <Container
           maxWidth="xl"
@@ -50,7 +51,10 @@ export function Landing() {
           }}
         >
           {showCarosuel && (
-            <SlideSection />
+            <>
+              <SlideSection />
+              <Destacados />
+            </>
           )}
           {/*showCarosuel && <Image img={IMAGE.SLIDE_MUJER_COMPRANDO} style={{ borderRadius: 8}} />*/}
           <Outlet />
