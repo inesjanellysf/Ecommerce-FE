@@ -25,10 +25,6 @@ const categoriasMenu = [
     url: "/frutas-verduras",
     isPrincipal: false,
     isInCategory: true,
-    children: [
-      { label: "Leche", url: "/bebidas/leche", isInCategory: true },
-      { label: "Cola", url: "/bebidas/cola", isInCategory: true },
-    ],
   },
   { label: "Carnes y pescado", url: "/carnes-pescados", isInCategory: true },
   {
@@ -40,6 +36,9 @@ const categoriasMenu = [
   { label: "Hogar", url: "/hogar", isInCategory: true },
   { label: "Lácteos", url: "/lacteos", isPrincipal: true, isInCategory: true },
   { label: "Cocina", url: "/cocina", isPrincipal: true, isInCategory: true },
+  { label: "Panaderia", url: "/lacteos", isPrincipal: true, isInCategory: true },
+  { label: "Comida Instantánea", url: "/lacteos", isPrincipal: false, isInCategory: true },
+  { label: "Bebidas", url: "/lacteos", isPrincipal: true, isInCategory: true },
 ];
 
 const iconMobile = [

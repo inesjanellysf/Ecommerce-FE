@@ -1,15 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import { CategoryCard } from "../../components/CategoryCard";
 import { useNavigate } from "react-router-dom";
-import { ProductCard } from "../../components/ProductCard";
 
-export default function Destacados() {
+export default function MasVendido() {
   const navigate = useNavigate();
 
   return (
-    <Box>
+    <Box pt={3}>
       <Typography variant="h6" fontWeight={700} mb={2}>
-        Categorías Destacadas
+        Los más vendidos del día
       </Typography>
 
       {/* GRID REAL QUE RELLENA TODO */}
@@ -25,7 +24,7 @@ export default function Destacados() {
         }}
       >
         {[1, 2, 3, 4, 5, 6].map((_, index) => (
-          <ProductCard
+          <CategoryCard
             key={index}
             title="Aperitivo"
             imageUrl="/img/categorias-destacadas/category-bakery-biscuits.webp"
