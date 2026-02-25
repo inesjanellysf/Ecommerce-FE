@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import { CategoryCard } from "../../components/CategoryCard";
 import { useNavigate } from "react-router-dom";
 import { ProductCard } from "../../components/ProductCard";
 
@@ -9,17 +8,16 @@ export default function Destacados() {
   return (
     <Box>
       <Typography variant="h6" fontWeight={700} mb={2}>
-        Categorías Destacadas
+        Categorias Destacadas
       </Typography>
 
-      {/* GRID REAL QUE RELLENA TODO */}
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: {
-            xs: "repeat(2, 1fr)",   // móvil
-            sm: "repeat(3, 1fr)",   // tablet
-            md: "repeat(6, 1fr)",   // desktop
+            xs: "repeat(2, 1fr)",
+            sm: "repeat(3, 1fr)",
+            md: "repeat(6, 1fr)",
           },
           gap: 2,
         }}
@@ -27,12 +25,14 @@ export default function Destacados() {
         {[1, 2, 3, 4, 5, 6].map((_, index) => (
           <ProductCard
             key={index}
+            isCompact={true}
+            showPrice={false}
+            showRating={false}
+            showActions={false}
+            highlightTitleOnHover={false}
             title="Aperitivo"
             imageUrl="/img/categorias-destacadas/category-bakery-biscuits.webp"
-            active={false}   // ✅ boolean real
-            onClick={() =>
-              navigate("/categoria/category-bakery-biscuits")
-            }
+            onClick={() => navigate("/categoria/category-bakery-biscuits")}
           />
         ))}
       </Box>

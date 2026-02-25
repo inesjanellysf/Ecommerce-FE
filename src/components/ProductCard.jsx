@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import {
     Card,
     CardContent,
-    CardMedia,
     CardActions,
     Typography,
     Box,
@@ -28,23 +27,54 @@ export function ProductCard({
     showPrice = true,
     showRating = true,
     showActions = true,
+    isCompact = false,
+    highlightTitleOnHover = true,
     addLabel = "Add to cart",
+    onClick,
     onAdd,
     onView,
     onFavorite,
     onCompare
 }) {
+    const hasQuickActions = Boolean(onView || onFavorite || onCompare);
+    const isCompactCard = isCompact || (!showPrice && !showRating);
+
     return (
         <Card
             variant="outlined"
+            onClick={onClick}
             sx={{
                 height: "100%",
                 position: "relative",
-                transition: "0.3s",
-                 "&:hover": {
+                borderRadius: 2,
+                borderColor: "#d6dbe1",
+                backgroundColor: "#ffffff",
+                overflow: "hidden",
+                transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+                cursor: onClick ? "pointer" : "default",
+                "&:hover": {
                     borderColor: "#22c55e",
-                    boxShadow: 6
+                    boxShadow: "0 14px 28px rgba(15, 23, 42, 0.12)",
+                    transform: "translateY(-4px) scale(1.01)"
                 },
+                "&:hover .product-card-image": {
+                    transform: "scale(1.08)"
+                },
+                "&:hover .product-card-actions": {
+                    opacity: 1,
+                    transform: "translate(-50%, 0)",
+                    pointerEvents: "auto"
+                },
+                ...(highlightTitleOnHover && {
+                    "&:hover .product-card-title": {
+                        color: "#16a34a"
+                    }
+                }),
+                "&:focus-within .product-card-actions": {
+                    opacity: 1,
+                    transform: "translate(-50%, 0)",
+                    pointerEvents: "auto"
+                }
             }}
         >
             {/* Badges */}
@@ -73,41 +103,49 @@ export function ProductCard({
 
             {/* Imagen */}
             <Box
-                justifyItems={"center"} sx={{ position: "relative" }}>
+                justifyItems={"center"}
+                sx={{ position: "relative", pt: isCompactCard ? 3 : 4 }}
+            >
                 {/* Imagen */}
                 <Box
                     sx={{
-                        height: 110,
+                        height: isCompactCard ? 140 : 210,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        mb: 1,
+                        mb: isCompactCard ? 1.25 : 2
                     }}
                 >
                     <img
+                        className="product-card-image"
                         src={imageUrl}
                         alt={title}
                         style={{
-                            maxHeight: 90,
+                            maxHeight: isCompactCard ? 90 : 150,
                             maxWidth: "100%",
                             objectFit: "contain",
+                            transition: "transform 0.3s ease"
                         }}
                     />
                 </Box>
 
-                {showActions && (
+                {showActions && hasQuickActions && (
                     <Box
+                        className="product-card-actions"
                         sx={{
                             position: "absolute",
                             bottom: 8,
                             left: "50%",
-                            transform: "translateX(-50%)",
+                            transform: "translate(-50%, 8px)",
                             display: "flex",
                             gap: 1,
                             bgcolor: "background.paper",
                             borderRadius: 2,
                             p: 0.5,
-                            boxShadow: 2
+                            boxShadow: 2,
+                            opacity: 0,
+                            pointerEvents: "none",
+                            transition: "opacity 0.2s ease, transform 0.2s ease"
                         }}
                     >
                         {onView && (
@@ -130,21 +168,31 @@ export function ProductCard({
             </Box>
 
             {/* Contenido */}
-            <CardContent>
+            <CardContent sx={{ px: 2.25, pb: isCompactCard ? 2 : 1, pt: isCompactCard ? 0.75 : 2 }}>
                 {category && (
-                    <Typography variant="caption" color="text.secondary">
+                    <Typography variant="caption" color="#64748b" sx={{ letterSpacing: 0.2 }}>
                         {category}
                     </Typography>
                 )}
 
-                <Typography textAlign={"center"} variant="subtitle1" fontWeight={600}>
+                <Typography
+                    className="product-card-title"
+                    textAlign={isCompactCard ? "center" : "left"}
+                    variant="subtitle1"
+                    fontWeight={700}
+                    sx={{
+                        color: "#0f2a4a",
+                        transition: "color 0.2s ease",
+                        fontSize: isCompactCard ? "0.82rem" : "1rem"
+                    }}
+                >
                     {title}
                 </Typography>
 
                 {showRating && rating !== undefined && (
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 0.5 }}>
-                        <Rating size="small" value={rating} readOnly />
-                        <Typography variant="caption" color="text.secondary">
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.8, mt: 0.5 }}>
+                        <Rating size="small" value={rating} readOnly sx={{ color: "#fbbf24" }} />
+                        <Typography variant="caption" sx={{ color: "#0f2a4a", fontWeight: 600 }}>
                             ({reviews || 0})
                         </Typography>
                     </Box>
@@ -152,39 +200,54 @@ export function ProductCard({
             </CardContent>
 
             {/* Precio + botón */}
-            {showPrice && currentPrice && (
+            {showPrice && currentPrice !== undefined && (
                 <CardActions
                     sx={{
-                        px: 2,
-                        pb: 2,
-                        display: "flex",
-                        justifyContent: "space-between"
+                        px: 2.25,
+                        pb: 3,
+                        pt: 0
                     }}
                 >
-                    <Box>
-                        <Typography fontWeight={600}>
+                    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 0.6 }}>
+                        <Typography fontWeight={600} sx={{ color: "#0f2a4a", fontSize: 16, lineHeight: 1.1, m: 0 }}>
                             ${currentPrice}
                         </Typography>
                         {oldPrice && (
                             <Typography
                                 variant="caption"
-                                color="text.secondary"
-                                sx={{ textDecoration: "line-through" }}
+                                sx={{ color: "#94a3b8", textDecoration: "line-through", m: 0 }}
                             >
                                 ${oldPrice}
                             </Typography>
                         )}
-                    </Box>
 
-                    {onAdd && (
-                        <Button
-                            variant="contained"
-                            size="small"
-                            onClick={onAdd}
-                        >
-                            + Add
-                        </Button>
-                    )}
+                        {onAdd && (
+                            <Button
+                                variant="contained"
+                                size="small"
+                                onClick={onAdd}
+                                sx={{
+                                    mt: 0,
+                                    ml: 0,
+                                    alignSelf: "flex-start",
+                                    borderRadius: 2.5,
+                                    px: 2,
+                                    py: 0.7,
+                                    textTransform: "none",
+                                    fontWeight: 700,
+                                    fontSize: "0.9rem",
+                                    backgroundColor: "#16a34a",
+                                    boxShadow: "none",
+                                    "&:hover": {
+                                        backgroundColor: "#15803d",
+                                        boxShadow: "none"
+                                    }
+                                }}
+                            >
+                                {addLabel}
+                            </Button>
+                        )}
+                    </Box>
                 </CardActions>
             )}
         </Card>
@@ -216,7 +279,10 @@ ProductCard.propTypes = {
     showPrice: PropTypes.bool,
     showRating: PropTypes.bool,
     showActions: PropTypes.bool,
+    isCompact: PropTypes.bool,
+    highlightTitleOnHover: PropTypes.bool,
     addLabel: PropTypes.string,
+    onClick: PropTypes.func,
     onAdd: PropTypes.func,
     onView: PropTypes.func,
     onFavorite: PropTypes.func,
