@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Box from '@mui/material/Box';
 
 export function Image({
   img,
@@ -29,5 +28,7 @@ export function Image({
 Image.propTypes = {
   img: PropTypes.string,
   height: PropTypes.number,
-  alt: PropTypes.string
+  alt: PropTypes.string,
+  width: PropTypes.string,
+  style: PropTypes.object,
 };

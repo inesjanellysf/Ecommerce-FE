@@ -1,7 +1,7 @@
 /* ===== APPBAR ===== */
 .appbar-root {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #DFE2E1;
+  background-color: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border);
   box-shadow: none !important;
 }
 
@@ -48,8 +48,8 @@
 
 /* ===== SUBHEADER / CATEGORIES ===== */
 .subheader {
-  background: #ffffff;
-  color: #21313c;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
 }
 
 .subheader-container {
@@ -61,15 +61,15 @@
 
 /* Botón principal de categorías */
 .categories-main {
-  background-color: #0aad0a;
-  color: #ffffff;
+  background-color: var(--color-brand);
+  color: var(--color-on-brand);
   font-weight: 500;
   text-transform: none;
 }
 
 /* Dropdown links */
 .category-link {
-  color: #21313c;
+  color: var(--color-text-primary);
   font-weight: 500;
   text-transform: none;
 }

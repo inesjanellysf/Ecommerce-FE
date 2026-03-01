@@ -1,4 +1,4 @@
-import { Box, Paper, Grid, Container, Stack, Typography } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
@@ -10,7 +10,6 @@ export function Register() {
       sx={{
         border: "1px solid rgb(10, 173, 10)",
         borderRadius: 2,
-        //height: "90%"
       }}
     >
       <Box m={4}>
@@ -33,18 +32,16 @@ export function Register() {
             <Input type="text" />
           </Stack>
 
-          {/* EMAIL */}
           <Stack spacing={1}>
             <Typography variant="body2" fontWeight={500}>
-              Correo electrónico
+              Correo electronico
             </Typography>
             <Input type="email" />
           </Stack>
 
-          {/* PASSWORD */}
           <Stack spacing={1}>
             <Typography variant="body2" fontWeight={500}>
-              Contraseña
+              Contrasena
             </Typography>
             <Input type="password" />
           </Stack>
@@ -63,7 +60,7 @@ export function Register() {
                   textDecoration: "none",
                 }}
               >
-                Iniciar Sesión
+                Iniciar sesion
               </Link>
             </Typography>
           </Stack>

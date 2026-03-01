@@ -16,6 +16,7 @@ import { IMAGE } from "../../constants/urlImage.js";
 import { useDevice } from "../../hooks/useDevice";
 import { TopIconsContainer } from "./components/TopIconsContainer.jsx";
 import { useSearch } from '../../hooks/useSearch.jsx';
+import { fetchJson } from "../../services/api.js";
 
 /* ===== CONFIG ===== */
 const categoriasMenu = [
@@ -63,9 +64,8 @@ function AppBarComponent() {
   };
 
   React.useEffect(() => {
-    fetch("/Data/NavBarData.json")
-      .then((res) => res.json())
-      .then((data) => setNavbarData(data))
+    fetchJson("/Data/NavBarData.json")
+      .then(setNavbarData)
       .catch((err) => console.error("Navbar error:", err));
   }, []);
 

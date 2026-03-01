@@ -2,6 +2,7 @@ import { Menu, MenuItem, ListItemText } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export function DropdownRecursive({
   anchorEl,
@@ -25,7 +26,7 @@ export function DropdownRecursive({
     setChildAnchor(null);
 
     if (url) {
-      navigate(url); // 👈 AQUÍ SE USA LA URL
+      navigate(url);
     }
   };
 
@@ -55,14 +56,14 @@ export function DropdownRecursive({
         return item.isInCategory ? (
           <MenuItem
             key={item.label}
-            onMouseEnter={(e) => {
+            onMouseEnter={(event) => {
               if (hasChildren) {
-                handleOpenChild(e, item.children);
+                handleOpenChild(event, item.children);
               }
             }}
             onClick={() => {
               if (!hasChildren) {
-                handleNavigate(item.url); // 👈 URL AQUÍ
+                handleNavigate(item.url);
               }
             }}
             sx={{
@@ -82,7 +83,6 @@ export function DropdownRecursive({
         ) : null;
       })}
 
-      {/* SUBMENÚ */}
       {childAnchor && (
         <DropdownRecursive
           anchorEl={childAnchor}
@@ -94,3 +94,17 @@ export function DropdownRecursive({
     </Menu>
   );
 }
+
+DropdownRecursive.propTypes = {
+  anchorEl: PropTypes.any,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string,
+      isInCategory: PropTypes.bool,
+      children: PropTypes.array,
+    })
+  ).isRequired,
+  onClose: PropTypes.func,
+  isSubMenu: PropTypes.bool,
+};

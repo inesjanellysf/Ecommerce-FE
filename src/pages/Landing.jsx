@@ -1,47 +1,23 @@
-import { useEffect, useState } from "react";
-
-import { Carousel } from "../components/Carousel.jsx";
-import { Footer } from "../layout/Footer.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import { useDevice } from "../hooks/useDevice";
 import AppBarComponent from "../layout/navBar/AppBar.jsx";
-import { IMAGE } from "../constants/urlImage.js";
-import { Image } from "../components/Image.jsx";
 import SlideSection from "../layout/slide/SlideSection.jsx";
 import Destacados from "../layout/destacados/Destacados.jsx";
 import Populares from "../layout/populares/Populares.jsx";
 import MasVendido from "../layout/masvendido/MasVendido.jsx";
 
 export function Landing() {
-  const [imgCarousel, setImgCarousel] = useState([]);
   const { isMobile } = useDevice();
   const location = useLocation();
-  const hideCarosuelRoutes = ["/", "/landing", "/libros"];
+  const hideCarouselRoutes = ["/", "/landing", "/libros"];
 
-  const showCarosuel = hideCarosuelRoutes.includes(location.pathname);
-
-  useEffect(() => {
-    fetch("/Data/CarouselData.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setImgCarousel(data);
-      })
-      .catch((error) => {
-        console.error("Error al cargar el JSON:", error);
-      });
-  }, []);
+  const showCarousel = hideCarouselRoutes.includes(location.pathname);
 
   return (
     <Box>
-      {console.log(location.pathname)}
       <AppBarComponent />
       <Box component="main" sx={{ pt: !isMobile ? 3 : 11, pb: 3 }}>
         {!isMobile && <Toolbar />}
@@ -52,7 +28,7 @@ export function Landing() {
             alignItems: "center",
           }}
         >
-          {showCarosuel && (
+          {showCarousel && (
             <>
               <SlideSection />
               <Destacados /> 
@@ -63,7 +39,6 @@ export function Landing() {
           <Outlet />
         </Container>
       </Box>
-      {/*<Footer />*/}
     </Box>
   );
 }

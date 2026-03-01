@@ -38,11 +38,28 @@ export function ProductCard({
 }) {
     const hasQuickActions = Boolean(onView || onFavorite || onCompare);
     const isCompactCard = isCompact || (!showPrice && !showRating);
+    const isClickable = Boolean(onClick);
+
+    const handleCardKeyDown = (event) => {
+        if (!isClickable) return;
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onClick(event);
+        }
+    };
+
+    const handleActionClick = (callback) => (event) => {
+        event.stopPropagation();
+        callback?.(event);
+    };
 
     return (
         <Card
             variant="outlined"
             onClick={onClick}
+            onKeyDown={handleCardKeyDown}
+            role={isClickable ? "button" : undefined}
+            tabIndex={isClickable ? 0 : undefined}
             sx={{
                 height: "100%",
                 position: "relative",
@@ -92,7 +109,7 @@ export function ProductCard({
                 >
                     {badges.map((badge, i) => (
                         <Chip
-                            key={i}
+                            key={`${badge.text}-${i}`}
                             size="small"
                             label={badge.text}
                             color={badge.color}
@@ -120,6 +137,8 @@ export function ProductCard({
                         className="product-card-image"
                         src={imageUrl}
                         alt={title}
+                        loading="lazy"
+                        decoding="async"
                         style={{
                             maxHeight: isCompactCard ? 90 : 150,
                             maxWidth: "100%",
@@ -149,17 +168,17 @@ export function ProductCard({
                         }}
                     >
                         {onView && (
-                            <IconButton size="small" onClick={onView}>
+                            <IconButton size="small" onClick={handleActionClick(onView)} aria-label="Quick view">
                                 <VisibilityIcon fontSize="small" />
                             </IconButton>
                         )}
                         {onFavorite && (
-                            <IconButton size="small" onClick={onFavorite}>
+                            <IconButton size="small" onClick={handleActionClick(onFavorite)} aria-label="Add to favorites">
                                 <FavoriteBorderIcon fontSize="small" />
                             </IconButton>
                         )}
                         {onCompare && (
-                            <IconButton size="small" onClick={onCompare}>
+                            <IconButton size="small" onClick={handleActionClick(onCompare)} aria-label="Compare product">
                                 <CompareArrowsIcon fontSize="small" />
                             </IconButton>
                         )}
@@ -225,7 +244,7 @@ export function ProductCard({
                             <Button
                                 variant="contained"
                                 size="small"
-                                onClick={onAdd}
+                                onClick={handleActionClick(onAdd)}
                                 sx={{
                                     mt: 0,
                                     ml: 0,
@@ -264,7 +283,7 @@ ProductCard.propTypes = {
     oldPrice: PropTypes.number,
     badges: PropTypes.arrayOf(
         PropTypes.shape({
-            text: PropTypes.string,
+            text: PropTypes.string.isRequired,
             color: PropTypes.oneOf([
                 "default",
                 "primary",

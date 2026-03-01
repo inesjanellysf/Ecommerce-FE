@@ -1,4 +1,4 @@
-import { Box, Paper, Grid, Container, Stack, Typography } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
@@ -15,18 +15,18 @@ export function ResetPassword() {
       <Box m={4}>
         <Stack spacing={4}>
           <Typography variant="h5" fontWeight={600}>
-            Restablecer su contraseña
+            Restablecer su contrasena
           </Typography>
 
-          <Stack spacing={2} textAlign={"justify"}>
+          <Stack spacing={2} textAlign="justify">
             <Typography variant="body2" fontWeight={500}>
-              Le enviaremos un correo electrónico para restablecer su
-              contraseña.
+              Le enviaremos un correo electronico para restablecer su
+              contrasena.
             </Typography>
           </Stack>
           <Stack spacing={2}>
             <Typography variant="body2" fontWeight={500}>
-              Dirección de correo electrónico
+              Direccion de correo electronico
             </Typography>
             <Input type="email" />
           </Stack>

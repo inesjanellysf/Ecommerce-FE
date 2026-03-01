@@ -1,7 +1,4 @@
-import { Box, Paper, Grid, Container, Stack, Typography } from "@mui/material";
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
-import { Link } from "react-router-dom";
+import { Box, Grid, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 export function Account() {
@@ -14,21 +11,14 @@ export function Account() {
           columnSpacing={{ xs: 1, sm: 2, md: 6 }}
           alignItems="center"
         >
-          {/* IMAGEN */}
           <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              //height="100%"
-            >
+            <Box display="flex" justifyContent="center" alignItems="center">
               <Box
                 component="img"
                 src="/img/signin/signin.webp"
                 alt="signin"
                 sx={{
                   width: "100%",
-                  //maxWidth: 420,   // opcional, evita que se vea gigante
                   height: "auto",
                   objectFit: "contain",
                 }}

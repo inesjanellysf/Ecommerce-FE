@@ -1,4 +1,4 @@
-import { Box, Paper, Grid, Container, Stack, Typography } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
@@ -18,18 +18,16 @@ export function Login() {
             Login
           </Typography>
 
-          {/* EMAIL */}
           <Stack spacing={1}>
             <Typography variant="body2" fontWeight={500}>
-              Correo electrónico
+              Correo electronico
             </Typography>
             <Input type="email" />
           </Stack>
 
-          {/* PASSWORD */}
           <Stack spacing={1}>
             <Typography variant="body2" fontWeight={500}>
-              Contraseña
+              Contrasena
             </Typography>
             <Input type="password" />
             <Typography variant="body2">
@@ -41,18 +39,18 @@ export function Login() {
                   textDecoration: "none",
                 }}
               >
-                ¿Olvidaste tu contraseña?
+                Olvidaste tu contrasena?
               </Link>
             </Typography>
           </Stack>
           <Stack spacing={1} alignItems="flex-start">
             <Button type="submit" fullWidth>
-              Iniciar sesión
+              Iniciar sesion
             </Button>
           </Stack>
           <Stack spacing={1} alignItems="flex-end">
             <Typography variant="body2" style={{ color: "rgb(10, 173, 10)" }}>
-              {"¿No tienes una cuenta? "}
+              {"No tienes una cuenta? "}
               <Link
                 to="/account/register"
                 style={{
@@ -61,7 +59,7 @@ export function Login() {
                   textDecoration: "none",
                 }}
               >
-                Regístrate
+                Registrate
               </Link>
             </Typography>
           </Stack>

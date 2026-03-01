@@ -6,6 +6,7 @@ import { Input } from "../../../components/Input";
 import { IMAGE } from "../../../constants/urlImage";
 import { BaseDrawer } from "../../../components/BaseDrawer";
 import { useSearch } from '../../../hooks/useSearch';
+import PropTypes from "prop-types";
 
 export default function DrawerSearch({ open, onClose }) {
     const { searchQuery, setSearchQuery } = useSearch();
@@ -48,3 +49,8 @@ export default function DrawerSearch({ open, onClose }) {
     </BaseDrawer>
   );
 }
+
+DrawerSearch.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired
+};

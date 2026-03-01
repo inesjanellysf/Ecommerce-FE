@@ -1,4 +1,5 @@
 import Drawer from "@mui/material/Drawer";
+import PropTypes from "prop-types";
 
 export function BaseDrawer({
   open,
@@ -26,3 +27,12 @@ export function BaseDrawer({
     </Drawer>
   );
 }
+
+BaseDrawer.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  anchor: PropTypes.oneOf(["left", "right", "top", "bottom"]),
+  zIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+  paperSx: PropTypes.object,
+  children: PropTypes.node,
+};

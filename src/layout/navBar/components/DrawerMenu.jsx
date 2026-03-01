@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Home, Mail } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function DrawerMenu({ open, isMobile, onClose, categoriasMenu }) {
   const navigate = useNavigate();
@@ -47,5 +48,18 @@ function DrawerMenu({ open, isMobile, onClose, categoriasMenu }) {
     </BaseDrawer>
   );
 }
+
+DrawerMenu.propTypes = {
+  open: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
+  onClose: PropTypes.func,
+  categoriasMenu: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string,
+      isPrincipal: PropTypes.bool,
+    })
+  ).isRequired,
+};
 
 export default DrawerMenu;

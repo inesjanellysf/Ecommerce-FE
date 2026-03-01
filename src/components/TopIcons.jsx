@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
+import PropTypes from "prop-types";
 
 export function TopIcons({
   icons = [],
@@ -12,7 +13,7 @@ export function TopIcons({
     <Box sx={{ display: "flex", alignItems: "center" }}>
       {icons.map((icon, index) => (
         <IconButton
-          key={index}
+          key={`${icon.icon}-${index}`}
           size="small"
           onClick={() => onIconClick?.(icon)}
           sx={{ color: "text.secondary" }}
@@ -34,8 +35,23 @@ export function TopIcons({
       ))}
 
       <IconButton size="small" onClick={onCartClick}>
-        <img src="/img/icon/bag.svg" width={20} />
+        <Badge badgeContent={badges.cart} color="success" overlap="circular">
+          <img src="/img/icon/bag.svg" alt="Cart" width={20} />
+        </Badge>
       </IconButton>
     </Box>
   );
 }
+
+TopIcons.propTypes = {
+  icons: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.string.isRequired,
+      badge: PropTypes.string,
+      url: PropTypes.string
+    })
+  ),
+  badges: PropTypes.object,
+  onIconClick: PropTypes.func,
+  onCartClick: PropTypes.func
+};

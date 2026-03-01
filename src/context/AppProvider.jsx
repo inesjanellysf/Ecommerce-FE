@@ -1,6 +1,7 @@
 import { CartProvider } from './cartContext/CartProvider';  // Importa de manera nombrada
 import { WishlistProvider } from './wishlistContext/WishlistProvider';
 import { SearchProvider } from './searchContext/SearchProvider';
+import PropTypes from "prop-types";
 
 export function AppProvider({ children }) {
     return (
@@ -13,3 +14,7 @@ export function AppProvider({ children }) {
         </CartProvider>
     );
 }
+
+AppProvider.propTypes = {
+    children: PropTypes.node.isRequired
+};

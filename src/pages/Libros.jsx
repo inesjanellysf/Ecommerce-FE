@@ -4,14 +4,13 @@ import fetchData from "../services/api.js";
 import { useSearch } from '../hooks/useSearch.jsx';
 import { useCart } from '../hooks/useCart.jsx';
 import { useWishlist } from '../hooks/useWishlist.jsx';
-import { Input } from "../components/Input.jsx";
 
 export function Libros() {
     const [books, setBooks] = useState([]);
     const [filteredBooks, setFilteredBooks] = useState([]);
     const { addToCart } = useCart();
     const { addToWishlist } = useWishlist();
-    const { searchQuery, setSearchQuery } = useSearch();
+    const { searchQuery } = useSearch();
 
     useEffect(() => {
         const filterBooks = () => {
@@ -35,8 +34,6 @@ export function Libros() {
     // Handlers
     const handleAddToCart = (book) => addToCart(book);
     const handleAddToWishlist = (book) => addToWishlist(book);
-    const handleSearchChange = (e) => setSearchQuery(e.target.value);
-
     return (
         <>
             <div className="g-4 row row-cols-lg-5 row-cols-md-3 row-cols-2">

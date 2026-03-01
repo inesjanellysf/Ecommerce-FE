@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from "prop-types";
 
 const OffCanvas = ({ offcanvasTitle, offcanvasDescription, isOpen = false, setIsOpen, children }) => {
 
@@ -29,6 +29,14 @@ const OffCanvas = ({ offcanvasTitle, offcanvasDescription, isOpen = false, setIs
             </div>
         </div>
     );
+};
+
+OffCanvas.propTypes = {
+    offcanvasTitle: PropTypes.string,
+    offcanvasDescription: PropTypes.string,
+    isOpen: PropTypes.bool,
+    setIsOpen: PropTypes.func.isRequired,
+    children: PropTypes.node
 };
 
 export default OffCanvas;

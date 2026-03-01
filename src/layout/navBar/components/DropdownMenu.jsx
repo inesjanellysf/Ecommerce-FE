@@ -3,11 +3,11 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import { DropdownRecursive } from "./DropdownRecursive";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export function DropdownMenu({
   label,
   url,
-  isPrincipal,
   items = [],
   variant = "text",
   startIcon,
@@ -31,7 +31,6 @@ export function DropdownMenu({
 
   return (
     <>
-      {console.log(url)}
       <Button
         onClick={handleClick}
         variant={variant}
@@ -59,3 +58,14 @@ export function DropdownMenu({
     </>
   );
 }
+
+DropdownMenu.propTypes = {
+  label: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  items: PropTypes.array,
+  variant: PropTypes.string,
+  startIcon: PropTypes.node,
+  background: PropTypes.string,
+  textColor: PropTypes.string,
+  sx: PropTypes.object,
+};
