@@ -2,8 +2,9 @@ import Box from "@mui/material/Box";
 import { IMAGE } from "../../constants/urlImage.js";
 import { Image } from "../../components/Image.jsx";
 import { HeroText } from "./components/HeroText";
+import PropTypes from "prop-types";
 
-function SlideSection() {
+function SlideSection({ hero }) {
   return (
     <Box
       sx={{
@@ -24,7 +25,7 @@ function SlideSection() {
         }}
       >
         <Image
-          img={IMAGE.SLIDE_MUJER_COMPRANDO}
+          img={hero?.imageUrl || IMAGE.SLIDE_MUJER_COMPRANDO}
           style={{
             width: "100%",
             height: "auto",
@@ -41,7 +42,7 @@ function SlideSection() {
             maxWidth: 480,
           }}
         >
-          <HeroText />
+          <HeroText hero={hero} />
         </Box>
         <Box
           sx={{
@@ -49,10 +50,19 @@ function SlideSection() {
             p: 2,
           }}
         >
-          <HeroText />
+          <HeroText hero={hero} />
         </Box>
       </Box>
     </Box>
   );
 }
+
+SlideSection.propTypes = {
+  hero: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    imageUrl: PropTypes.string,
+  }),
+};
+
 export default SlideSection;

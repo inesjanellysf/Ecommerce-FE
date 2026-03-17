@@ -1,0 +1,14 @@
+{
+  "success": false,
+  "message": "Existen errores de validacion.",
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "status": 422,
+    "fields": {
+      "firstName": "El nombre es obligatorio.",
+      "lastName": "El apellido es obligatorio.",
+      "email": "El correo ya se encuentra registrado.",
+      "password": "La contrasena debe tener al menos 8 caracteres."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "message": "Carrito obtenido correctamente.",
+  "data": {
+    "items": [
+      {
+        "id": 1,
+        "productId": 1,
+        "title": "El nombre del viento",
+        "imageUrl": "https://images.cdn3.buscalibre.com/fit-in/360x360/aa/cc/aacc1e2d359a74f3efb144b8ab8f790f.jpg",
+        "currentPrice": 21.6,
+        "quantity": 2,
+        "subtotal": 43.2
+      },
+      {
+        "id": 2,
+        "productId": 3,
+        "title": "Dune",
+        "imageUrl": "https://images.cdn1.buscalibre.com/fit-in/360x360/e7/25/e725760e5c93acdeccf44903ff2fcb94.jpg",
+        "currentPrice": 25,
+        "quantity": 1,
+        "subtotal": 25
+      }
+    ],
+    "totals": {
+      "itemsCount": 3,
+      "subtotal": 68.2,
+      "shipping": 0,
+      "discount": 0,
+      "total": 68.2
+    }
+  }
+}

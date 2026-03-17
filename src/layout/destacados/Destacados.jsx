@@ -1,48 +1,13 @@
 import { Box, Typography } from "@mui/material";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { ProductCard } from "../../components/ProductCard";
 
-const FEATURED_CATEGORIES = [
-  {
-    id: "bakery-biscuits",
-    title: "Aperitivo",
-    imageUrl: "/img/categorias-destacadas/category-bakery-biscuits.webp",
-    route: "/categoria/category-bakery-biscuits",
-  },
-  {
-    id: "bakery-biscuits-2",
-    title: "Aperitivo",
-    imageUrl: "/img/categorias-destacadas/category-bakery-biscuits.webp",
-    route: "/categoria/category-bakery-biscuits",
-  },
-  {
-    id: "bakery-biscuits-3",
-    title: "Aperitivo",
-    imageUrl: "/img/categorias-destacadas/category-bakery-biscuits.webp",
-    route: "/categoria/category-bakery-biscuits",
-  },
-  {
-    id: "bakery-biscuits-4",
-    title: "Aperitivo",
-    imageUrl: "/img/categorias-destacadas/category-bakery-biscuits.webp",
-    route: "/categoria/category-bakery-biscuits",
-  },
-  {
-    id: "bakery-biscuits-5",
-    title: "Aperitivo",
-    imageUrl: "/img/categorias-destacadas/category-bakery-biscuits.webp",
-    route: "/categoria/category-bakery-biscuits",
-  },
-  {
-    id: "bakery-biscuits-6",
-    title: "Aperitivo",
-    imageUrl: "/img/categorias-destacadas/category-bakery-biscuits.webp",
-    route: "/categoria/category-bakery-biscuits",
-  },
-];
+const DEFAULT_CATEGORIES = [];
 
-export default function Destacados() {
+export default function Destacados({ categories = DEFAULT_CATEGORIES }) {
   const navigate = useNavigate();
+  const safeCategories = Array.isArray(categories) ? categories : DEFAULT_CATEGORIES;
 
   return (
     <Box>
@@ -61,7 +26,7 @@ export default function Destacados() {
           gap: 2,
         }}
       >
-        {FEATURED_CATEGORIES.map((category) => (
+        {safeCategories.map((category) => (
           <ProductCard
             key={category.id}
             isCompact
@@ -78,3 +43,14 @@ export default function Destacados() {
     </Box>
   );
 }
+
+Destacados.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string.isRequired,
+      route: PropTypes.string.isRequired,
+    }),
+  ),
+};

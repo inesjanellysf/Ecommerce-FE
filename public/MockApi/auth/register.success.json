@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "Usuario registrado correctamente.",
+  "data": {
+    "user": {
+      "id": 11,
+      "firstName": "Ana",
+      "lastName": "Lopez",
+      "fullName": "Ana Lopez",
+      "email": "ana.lopez@example.com",
+      "role": "customer"
+    }
+  }
+}

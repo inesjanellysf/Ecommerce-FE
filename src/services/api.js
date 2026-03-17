@@ -6,6 +6,10 @@ export async function fetchJson(url, options = {}) {
     return response.json();
 }
 
+export function unwrapApiData(response) {
+    return response?.data ?? response;
+}
+
 export default function fetchData(url, onSuccess, onError, options = {}) {
     fetchJson(url, options)
         .then((data) => onSuccess?.(data))

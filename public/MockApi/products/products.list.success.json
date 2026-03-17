@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "message": "Productos obtenidos correctamente.",
+  "data": {
+    "items": [
+      {
+        "id": 1,
+        "sku": "BOOK-001",
+        "title": "El nombre del viento",
+        "slug": "el-nombre-del-viento",
+        "description": "Novela de fantasia epica.",
+        "imageUrl": "https://images.cdn3.buscalibre.com/fit-in/360x360/aa/cc/aacc1e2d359a74f3efb144b8ab8f790f.jpg",
+        "category": "Fantasia",
+        "rating": 4.3,
+        "reviews": 4,
+        "currentPrice": 21.6,
+        "oldPrice": 24,
+        "stock": 12,
+        "badges": [
+          { "text": "Sale", "color": "error" },
+          { "text": "10%", "color": "success" }
+        ]
+      },
+      {
+        "id": 2,
+        "sku": "BOOK-002",
+        "title": "Harry Potter y la piedra filosofal",
+        "slug": "harry-potter-y-la-piedra-filosofal",
+        "description": "Primer libro de la saga de Harry Potter.",
+        "imageUrl": "https://images.cdn1.buscalibre.com/fit-in/360x360/c4/e9/c4e93e876288b4a0021a0cef47efc8bf.jpg",
+        "category": "Fantasia",
+        "rating": 4.8,
+        "reviews": 20,
+        "currentPrice": 15.9,
+        "oldPrice": 18,
+        "stock": 8,
+        "badges": []
+      },
+      {
+        "id": 3,
+        "sku": "BOOK-003",
+        "title": "Dune",
+        "slug": "dune",
+        "description": "Clasico de ciencia ficcion.",
+        "imageUrl": "https://images.cdn1.buscalibre.com/fit-in/360x360/e7/25/e725760e5c93acdeccf44903ff2fcb94.jpg",
+        "category": "Ciencia ficcion",
+        "rating": 4.8,
+        "reviews": 25,
+        "currentPrice": 25,
+        "oldPrice": 28,
+        "stock": 5,
+        "badges": [
+          { "text": "Best Seller", "color": "primary" }
+        ]
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 12,
+      "totalItems": 27,
+      "totalPages": 3
+    },
+    "filters": {
+      "search": "",
+      "category": null,
+      "sortBy": "popularity"
+    }
+  }
+}

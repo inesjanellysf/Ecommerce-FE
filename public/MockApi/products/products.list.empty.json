@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "message": "No se encontraron productos para los filtros enviados.",
+  "data": {
+    "items": [],
+    "pagination": {
+      "page": 1,
+      "pageSize": 12,
+      "totalItems": 0,
+      "totalPages": 0
+    },
+    "filters": {
+      "search": "arquitectura limpia",
+      "category": "Tecnologia",
+      "sortBy": "price_asc"
+    }
+  }
+}

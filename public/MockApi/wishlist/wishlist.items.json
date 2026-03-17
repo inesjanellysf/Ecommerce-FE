@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "message": "Wishlist obtenida correctamente.",
+  "data": {
+    "items": [
+      {
+        "id": 1,
+        "productId": 2,
+        "title": "Harry Potter y la piedra filosofal",
+        "imageUrl": "https://images.cdn1.buscalibre.com/fit-in/360x360/c4/e9/c4e93e876288b4a0021a0cef47efc8bf.jpg",
+        "category": "Fantasia",
+        "currentPrice": 15.9
+      },
+      {
+        "id": 2,
+        "productId": 17,
+        "title": "El alquimista",
+        "imageUrl": "https://images.cdn3.buscalibre.com/fit-in/360x360/d2/09/d209af64940f38b4a435531bf6db75a2.jpg",
+        "category": "Ficcion",
+        "currentPrice": 12.99
+      }
+    ],
+    "count": 2
+  }
+}

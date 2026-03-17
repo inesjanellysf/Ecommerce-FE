@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Producto agregado a la wishlist.",
+  "data": {
+    "productId": 1,
+    "count": 3
+  }
+}

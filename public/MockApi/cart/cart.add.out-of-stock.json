@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "No hay stock suficiente para agregar este producto.",
+  "error": {
+    "code": "OUT_OF_STOCK",
+    "status": 409,
+    "details": "La cantidad solicitada supera el stock disponible."
+  }
+}

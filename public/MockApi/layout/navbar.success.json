@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "message": "Configuracion del navbar obtenida correctamente.",
+  "data": {
+    "languages": [
+      { "code": "es", "language": "Espanol", "icon": "spanish" },
+      { "code": "en", "language": "Ingles", "icon": "english" },
+      { "code": "de", "language": "Aleman", "icon": "deutsch" }
+    ],
+    "logo": {
+      "img": "/img/logo/sabores_de_casa_logo.png",
+      "title": "Sabores de Casa"
+    },
+    "searchPlaceholder": "Buscar productos",
+    "categories": [
+      { "label": "Home", "url": "/", "isPrincipal": true, "isInCategory": false },
+      { "label": "Frutas y verduras", "url": "/frutas-verduras", "isPrincipal": false, "isInCategory": true },
+      { "label": "Aperitivos", "url": "/aperitivos", "isPrincipal": true, "isInCategory": true }
+    ]
+  }
+}

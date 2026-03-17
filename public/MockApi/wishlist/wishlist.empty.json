@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "No hay productos en la wishlist.",
+  "data": {
+    "items": [],
+    "count": 0
+  }
+}

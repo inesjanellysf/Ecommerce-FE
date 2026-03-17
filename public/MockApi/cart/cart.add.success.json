@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "message": "Producto agregado al carrito.",
+  "data": {
+    "productId": 1,
+    "quantity": 1,
+    "availableStock": 12
+  }
+}

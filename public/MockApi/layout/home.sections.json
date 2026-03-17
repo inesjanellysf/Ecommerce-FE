@@ -1,0 +1,214 @@
+{
+  "success": true,
+  "message": "Contenido de home obtenido correctamente.",
+  "data": {
+    "hero": {
+      "title": "Compra facil desde casa",
+      "subtitle": "Encuentra tus productos favoritos con entregas rapidas.",
+      "imageUrl": "/img/slide/slide_mujer_comprando.webp"
+    },
+    "featuredCategories": [
+      {
+        "id": "cat-001",
+        "title": "Aperitivos",
+        "imageUrl": "/img/categorias-destacadas/category-bakery-biscuits.webp",
+        "route": "/categoria/aperitivos"
+      },
+      {
+        "id": "cat-002",
+        "title": "Lacteos",
+        "imageUrl": "/img/categorias-destacadas/category-dairy-bread-eggs.webp",
+        "route": "/categoria/lacteos"
+      },
+      {
+        "id": "cat-003",
+        "title": "Panaderia",
+        "imageUrl": "/img/categorias-destacadas/category-bakery-biscuits.webp",
+        "route": "/categoria/panaderia"
+      },
+      {
+        "id": "cat-004",
+        "title": "Comida instantanea",
+        "imageUrl": "/img/categorias-destacadas/category-instant-food.webp",
+        "route": "/categoria/comida-instantanea"
+      },
+      {
+        "id": "cat-005",
+        "title": "Cafe y bebidas",
+        "imageUrl": "/img/categorias-destacadas/category-tea-coffee-drinks.webp",
+        "route": "/categoria/cafe-bebidas"
+      },
+      {
+        "id": "cat-006",
+        "title": "Arroz y granos",
+        "imageUrl": "/img/categorias-destacadas/category-atta-rice-dal.webp",
+        "route": "/categoria/arroz-granos"
+      }
+    ],
+    "popularProducts": [
+      {
+        "id": 101,
+        "title": "Queso Mozzarella",
+        "imageUrl": "/img/categorias-destacadas/category-dairy-bread-eggs.webp",
+        "category": "Lacteos",
+        "rating": 4.5,
+        "reviews": 120,
+        "currentPrice": 3.99,
+        "oldPrice": 4.5,
+        "badges": [
+          { "text": "Nuevo", "color": "success" },
+          { "text": "-15%", "color": "error" }
+        ]
+      },
+      {
+        "id": 102,
+        "title": "Pan integral",
+        "imageUrl": "/img/categorias-destacadas/category-bakery-biscuits.webp",
+        "category": "Panaderia",
+        "rating": 4.3,
+        "reviews": 87,
+        "currentPrice": 2.5,
+        "oldPrice": 3.1,
+        "badges": [
+          { "text": "Popular", "color": "primary" }
+        ]
+      },
+      {
+        "id": 103,
+        "title": "Galletas de avena",
+        "imageUrl": "/img/categorias-destacadas/category-bakery-biscuits.webp",
+        "category": "Aperitivos",
+        "rating": 4.7,
+        "reviews": 140,
+        "currentPrice": 1.99,
+        "oldPrice": 2.3,
+        "badges": [
+          { "text": "Top", "color": "warning" }
+        ]
+      },
+      {
+        "id": 104,
+        "title": "Fideos instantaneos",
+        "imageUrl": "/img/categorias-destacadas/category-instant-food.webp",
+        "category": "Comida instantanea",
+        "rating": 4.1,
+        "reviews": 63,
+        "currentPrice": 0.99,
+        "oldPrice": 1.25,
+        "badges": [
+          { "text": "Oferta", "color": "error" }
+        ]
+      },
+      {
+        "id": 105,
+        "title": "Cafe molido premium",
+        "imageUrl": "/img/categorias-destacadas/category-tea-coffee-drinks.webp",
+        "category": "Bebidas",
+        "rating": 4.8,
+        "reviews": 200,
+        "currentPrice": 6.75,
+        "oldPrice": 7.5,
+        "badges": [
+          { "text": "Best Seller", "color": "success" }
+        ]
+      },
+      {
+        "id": 106,
+        "title": "Arroz premium",
+        "imageUrl": "/img/categorias-destacadas/category-atta-rice-dal.webp",
+        "category": "Granos",
+        "rating": 4.4,
+        "reviews": 112,
+        "currentPrice": 4.2,
+        "oldPrice": 4.8,
+        "badges": []
+      },
+      {
+        "id": 107,
+        "title": "Huevos organicos",
+        "imageUrl": "/img/categorias-destacadas/category-dairy-bread-eggs.webp",
+        "category": "Lacteos",
+        "rating": 4.9,
+        "reviews": 175,
+        "currentPrice": 5.1,
+        "oldPrice": 5.8,
+        "badges": [
+          { "text": "Recomendado", "color": "info" }
+        ]
+      },
+      {
+        "id": 108,
+        "title": "Te verde",
+        "imageUrl": "/img/categorias-destacadas/category-tea-coffee-drinks.webp",
+        "category": "Bebidas",
+        "rating": 4.2,
+        "reviews": 58,
+        "currentPrice": 3.4,
+        "oldPrice": 3.9,
+        "badges": []
+      },
+      {
+        "id": 109,
+        "title": "Snack mix",
+        "imageUrl": "/img/categorias-destacadas/category-snack-munchies.webp",
+        "category": "Aperitivos",
+        "rating": 4.6,
+        "reviews": 131,
+        "currentPrice": 2.8,
+        "oldPrice": 3.2,
+        "badges": [
+          { "text": "-10%", "color": "error" }
+        ]
+      },
+      {
+        "id": 110,
+        "title": "Harina integral",
+        "imageUrl": "/img/categorias-destacadas/category-atta-rice-dal.webp",
+        "category": "Granos",
+        "rating": 4.3,
+        "reviews": 76,
+        "currentPrice": 2.2,
+        "oldPrice": 2.7,
+        "badges": []
+      }
+    ],
+    "bestSellers": [
+      {
+        "id": "best-1",
+        "title": "Aperitivos",
+        "imageUrl": "/img/categorias-destacadas/category-snack-munchies.webp",
+        "route": "/categoria/aperitivos"
+      },
+      {
+        "id": "best-2",
+        "title": "Lacteos",
+        "imageUrl": "/img/categorias-destacadas/category-dairy-bread-eggs.webp",
+        "route": "/categoria/lacteos"
+      },
+      {
+        "id": "best-3",
+        "title": "Panaderia",
+        "imageUrl": "/img/categorias-destacadas/category-bakery-biscuits.webp",
+        "route": "/categoria/panaderia"
+      },
+      {
+        "id": "best-4",
+        "title": "Comida instantanea",
+        "imageUrl": "/img/categorias-destacadas/category-instant-food.webp",
+        "route": "/categoria/comida-instantanea"
+      },
+      {
+        "id": "best-5",
+        "title": "Bebidas",
+        "imageUrl": "/img/categorias-destacadas/category-tea-coffee-drinks.webp",
+        "route": "/categoria/bebidas"
+      },
+      {
+        "id": "best-6",
+        "title": "Granos",
+        "imageUrl": "/img/categorias-destacadas/category-atta-rice-dal.webp",
+        "route": "/categoria/granos"
+      }
+    ]
+  }
+}

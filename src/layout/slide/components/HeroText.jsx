@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
+import PropTypes from "prop-types";
 
-export function HeroText() {
+export function HeroText({ hero }) {
   return (
     <>
       <Box
@@ -29,7 +30,7 @@ export function HeroText() {
           color: "#022c22",
         }}
       >
-        Tienda de alimentos frescos
+        {hero?.title || "Tienda de alimentos frescos"}
       </Box>
 
       <Box
@@ -39,8 +40,8 @@ export function HeroText() {
           fontSize: { xs: 14, md: 16 },
         }}
       >
-        Introdujimos un nuevo modelo para compras de comestibles en línea y
-        entrega conveniente a domicilio.
+        {hero?.subtitle ||
+          "Introdujimos un nuevo modelo para compras de comestibles en linea y entrega conveniente a domicilio."}
       </Box>
 
       <Box
@@ -57,8 +58,15 @@ export function HeroText() {
           cursor: "pointer",
         }}
       >
-        Comprar Ahora →
+        Comprar Ahora -&gt;
       </Box>
     </>
   );
 }
+
+HeroText.propTypes = {
+  hero: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+  }),
+};

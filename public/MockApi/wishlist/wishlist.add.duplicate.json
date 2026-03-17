@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "El producto ya existe en la wishlist.",
+  "error": {
+    "code": "WISHLIST_DUPLICATE",
+    "status": 409,
+    "details": "No se agrego el producto porque ya estaba guardado."
+  }
+}

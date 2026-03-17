@@ -15,31 +15,59 @@ import { Image } from "../../components/Image.jsx";
 import { IMAGE } from "../../constants/urlImage.js";
 import { useDevice } from "../../hooks/useDevice";
 import { TopIconsContainer } from "./components/TopIconsContainer.jsx";
-import { useSearch } from '../../hooks/useSearch.jsx';
-import { fetchJson } from "../../services/api.js";
+import { useSearch } from "../../hooks/useSearch.jsx";
+import { fetchJson, unwrapApiData } from "../../services/api.js";
 
-/* ===== CONFIG ===== */
 const categoriasMenu = [
   { label: "Home", url: "/", isPrincipal: true, isInCategory: false },
   {
     label: "Frutas y verduras",
-    url: "/frutas-verduras",
+    url: "/categoria/frutas-y-verduras",
     isPrincipal: false,
     isInCategory: true,
   },
-  { label: "Carnes y pescado", url: "/carnes-pescados", isInCategory: true },
+  {
+    label: "Carnes y pescado",
+    url: "/categoria/carnes-y-pescado",
+    isInCategory: true,
+  },
   {
     label: "Aperitivos",
-    url: "/aperitivos",
+    url: "/categoria/aperitivos",
     isPrincipal: true,
     isInCategory: true,
   },
-  { label: "Hogar", url: "/hogar", isInCategory: true },
-  { label: "Lácteos", url: "/lacteos", isPrincipal: true, isInCategory: true },
-  { label: "Cocina", url: "/cocina", isPrincipal: true, isInCategory: true },
-  { label: "Panaderia", url: "/lacteos", isPrincipal: true, isInCategory: true },
-  { label: "Comida Instantánea", url: "/lacteos", isPrincipal: false, isInCategory: true },
-  { label: "Bebidas", url: "/lacteos", isPrincipal: true, isInCategory: true },
+  { label: "Hogar", url: "/categoria/hogar", isInCategory: true },
+  {
+    label: "Lacteos",
+    url: "/categoria/lacteos",
+    isPrincipal: true,
+    isInCategory: true,
+  },
+  {
+    label: "Cocina",
+    url: "/categoria/cocina",
+    isPrincipal: true,
+    isInCategory: true,
+  },
+  {
+    label: "Panaderia",
+    url: "/categoria/panaderia",
+    isPrincipal: true,
+    isInCategory: true,
+  },
+  {
+    label: "Comida instantanea",
+    url: "/categoria/comida-instantanea",
+    isPrincipal: false,
+    isInCategory: true,
+  },
+  {
+    label: "Bebidas",
+    url: "/categoria/bebidas",
+    isPrincipal: true,
+    isInCategory: true,
+  },
 ];
 
 const iconMobile = [
@@ -64,12 +92,11 @@ function AppBarComponent() {
   };
 
   React.useEffect(() => {
-    fetchJson("/Data/NavBarData.json")
-      .then(setNavbarData)
+    fetchJson("/MockApi/layout/navbar.success.json")
+      .then((response) => setNavbarData(unwrapApiData(response)))
       .catch((err) => console.error("Navbar error:", err));
   }, []);
 
-  /* Close drawer on desktop */
   React.useEffect(() => {
     if (!isMobile && open) {
       setOpen(false);
@@ -115,9 +142,7 @@ function AppBarComponent() {
                 )}
               </Box>
               <Box className="appbar-right">
-                <TopIconsContainer
-                  icons={isMobile ? iconMobile : iconDesktop}
-                />
+                <TopIconsContainer icons={isMobile ? iconMobile : iconDesktop} />
               </Box>
             </Box>
           </Toolbar>
@@ -126,7 +151,7 @@ function AppBarComponent() {
               <Container maxWidth="xl">
                 <Box className="subheader-container">
                   <DropdownMenu
-                    label="Más Categorías"
+                    label="Mas categorias"
                     items={categoriasMenu}
                     variant="contained"
                     startIcon={<GridViewIcon />}

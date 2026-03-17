@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "No fue posible procesar el pago.",
+  "error": {
+    "code": "PAYMENT_FAILED",
+    "status": 402,
+    "details": "La entidad bancaria rechazo la transaccion."
+  }
+}

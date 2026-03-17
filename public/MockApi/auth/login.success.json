@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "message": "Inicio de sesion correcto.",
+  "data": {
+    "token": "mock-jwt-token",
+    "refreshToken": "mock-refresh-token",
+    "user": {
+      "id": 10,
+      "firstName": "Ines",
+      "lastName": "Fajardo Romero",
+      "fullName": "Ines Fajardo Romero",
+      "email": "ines@example.com",
+      "role": "customer"
+    }
+  }
+}

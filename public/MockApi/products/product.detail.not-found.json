@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "message": "Producto no encontrado.",
+  "error": {
+    "code": "PRODUCT_NOT_FOUND",
+    "status": 404,
+    "details": "No existe un producto con el identificador solicitado."
+  }
+}

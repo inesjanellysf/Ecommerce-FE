@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "message": "Detalle de producto obtenido correctamente.",
+  "data": {
+    "id": 1,
+    "sku": "BOOK-001",
+    "title": "El nombre del viento",
+    "slug": "el-nombre-del-viento",
+    "description": "Historia de Kvothe narrada en primera persona.",
+    "imageUrl": "https://images.cdn3.buscalibre.com/fit-in/360x360/aa/cc/aacc1e2d359a74f3efb144b8ab8f790f.jpg",
+    "gallery": [
+      "https://images.cdn3.buscalibre.com/fit-in/360x360/aa/cc/aacc1e2d359a74f3efb144b8ab8f790f.jpg"
+    ],
+    "category": "Fantasia",
+    "author": "Patrick Rothfuss",
+    "rating": 4.3,
+    "reviews": 4,
+    "currentPrice": 21.6,
+    "oldPrice": 24,
+    "stock": 12,
+    "badges": [
+      { "text": "Sale", "color": "error" },
+      { "text": "10%", "color": "success" }
+    ]
+  }
+}
